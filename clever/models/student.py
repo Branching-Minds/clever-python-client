@@ -28,7 +28,6 @@ class Student(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        # 'created': 'str',
         'credentials': 'Credentials',
         'dob': 'str',
         'ell_status': 'str',
@@ -48,13 +47,10 @@ class Student(object):
         'schools': 'list[str]',
         'sis_id': 'str',
         'state_id': 'str',
-        'student_number': 'str',
-        #'unweighted_gpa': 'str',
-        #'weighted_gpa': 'str'
+        'student_number': 'str'
     }
 
     attribute_map = {
-        'created': 'created',
         'credentials': 'credentials',
         'dob': 'dob',
         'ell_status': 'ell_status',
@@ -74,14 +70,11 @@ class Student(object):
         'schools': 'schools',
         'sis_id': 'sis_id',
         'state_id': 'state_id',
-        'student_number': 'student_number',
-        'unweighted_gpa': 'unweighted_gpa',
-        'weighted_gpa': 'weighted_gpa'
+        'student_number': 'student_number'
     }
 
     def __init__(self, created=None, credentials=None, dob=None, ell_status=None, enrollments=None, ext=None, gender=None, grade=None, graduation_year=None, hispanic_ethnicity=None, home_language=None, iep_status=None, last_modified=None, legacy_id=None, location=None, race=None, school=None, schools=None, sis_id=None, state_id=None, student_number=None, unweighted_gpa=None, weighted_gpa=None):  # noqa: E501
         """Student - a model defined in Swagger"""  # noqa: E501
-        self._created = None
         self._credentials = None
         self._dob = None
         self._ell_status = None
@@ -102,8 +95,6 @@ class Student(object):
         self._sis_id = None
         self._state_id = None
         self._student_number = None
-        self._unweighted_gpa = None
-        self._weighted_gpa = None
         self.discriminator = None
         if created is not None:
             self.created = created
@@ -152,26 +143,7 @@ class Student(object):
         if weighted_gpa is not None:
             self.weighted_gpa = weighted_gpa
 
-    @property
-    def created(self):
-        """Gets the created of this Student.  # noqa: E501
 
-
-        :return: The created of this Student.  # noqa: E501
-        :rtype: str
-        """
-        return self._created
-
-    @created.setter
-    def created(self, created):
-        """Sets the created of this Student.
-
-
-        :param created: The created of this Student.  # noqa: E501
-        :type: str
-        """
-
-        self._created = created
 
     @property
     def credentials(self):
@@ -628,48 +600,6 @@ class Student(object):
         """
 
         self._student_number = student_number
-
-    @property
-    def unweighted_gpa(self):
-        """Gets the unweighted_gpa of this Student.  # noqa: E501
-
-
-        :return: The unweighted_gpa of this Student.  # noqa: E501
-        :rtype: str
-        """
-        return self._unweighted_gpa
-
-    @unweighted_gpa.setter
-    def unweighted_gpa(self, unweighted_gpa):
-        """Sets the unweighted_gpa of this Student.
-
-
-        :param unweighted_gpa: The unweighted_gpa of this Student.  # noqa: E501
-        :type: str
-        """
-
-        self._unweighted_gpa = unweighted_gpa
-
-    @property
-    def weighted_gpa(self):
-        """Gets the weighted_gpa of this Student.  # noqa: E501
-
-
-        :return: The weighted_gpa of this Student.  # noqa: E501
-        :rtype: str
-        """
-        return self._weighted_gpa
-
-    @weighted_gpa.setter
-    def weighted_gpa(self, weighted_gpa):
-        """Sets the weighted_gpa of this Student.
-
-
-        :param weighted_gpa: The weighted_gpa of this Student.  # noqa: E501
-        :type: str
-        """
-
-        self._weighted_gpa = weighted_gpa
 
     def to_dict(self):
         """Returns the model properties as a dict"""
