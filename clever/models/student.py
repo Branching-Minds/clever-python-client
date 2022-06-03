@@ -28,7 +28,7 @@ class Student(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'created': 'str',
+        # 'created': 'str',
         'credentials': 'Credentials',
         'dob': 'str',
         'ell_status': 'str',
@@ -49,8 +49,8 @@ class Student(object):
         'sis_id': 'str',
         'state_id': 'str',
         'student_number': 'str',
-        'unweighted_gpa': 'str',
-        'weighted_gpa': 'str'
+        #'unweighted_gpa': 'str',
+        #'weighted_gpa': 'str'
     }
 
     attribute_map = {
