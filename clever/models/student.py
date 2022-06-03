@@ -694,7 +694,8 @@ class Student(object):
                 result[attr] = value
         if issubclass(Student, dict):
             for key, value in self.items():
-                result[key] = value
+                if key in self.swagger_types:
+                    result[key] = value
 
         return result
 
