@@ -28,13 +28,13 @@ class Teacher(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'created': 'str',
+        #'created': 'str',
         'credentials': 'Credentials',
-        'district': 'str',
+        # 'district': 'str',
         'ext': 'object',
-        'last_modified': 'str',
+        # 'last_modified': 'str',
         'legacy_id': 'str',
-        'name': 'Name',
+        #'name': 'Name',
         'school': 'str',
         'schools': 'list[str]',
         'sis_id': 'str',
