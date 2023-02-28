@@ -73,8 +73,8 @@ class Student(object):
         'sis_id': 'sis_id',
         'state_id': 'state_id',
         'student_number': 'student_number',
-        'frl_status': 'str',
-        'email': 'str'
+        'frl_status': 'frl_status',
+        'email': 'email'
     }
 
     def __init__(self, created=None, credentials=None, dob=None, ell_status=None, enrollments=None, ext=None, gender=None, grade=None, graduation_year=None, hispanic_ethnicity=None, home_language=None, iep_status=None, last_modified=None, legacy_id=None, location=None, race=None, school=None, schools=None, sis_id=None, state_id=None, student_number=None, unweighted_gpa=None, weighted_gpa=None, frl_status=None, email=None):  # noqa: E501
