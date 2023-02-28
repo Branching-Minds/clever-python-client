@@ -47,7 +47,9 @@ class Student(object):
         'schools': 'list[str]',
         'sis_id': 'str',
         'state_id': 'str',
-        'student_number': 'str'
+        'student_number': 'str',
+        'frl_status': 'str',
+        'email': 'str'
     }
 
     attribute_map = {
@@ -70,10 +72,12 @@ class Student(object):
         'schools': 'schools',
         'sis_id': 'sis_id',
         'state_id': 'state_id',
-        'student_number': 'student_number'
+        'student_number': 'student_number',
+        'frl_status': 'str',
+        'email': 'str'
     }
 
-    def __init__(self, created=None, credentials=None, dob=None, ell_status=None, enrollments=None, ext=None, gender=None, grade=None, graduation_year=None, hispanic_ethnicity=None, home_language=None, iep_status=None, last_modified=None, legacy_id=None, location=None, race=None, school=None, schools=None, sis_id=None, state_id=None, student_number=None, unweighted_gpa=None, weighted_gpa=None):  # noqa: E501
+    def __init__(self, created=None, credentials=None, dob=None, ell_status=None, enrollments=None, ext=None, gender=None, grade=None, graduation_year=None, hispanic_ethnicity=None, home_language=None, iep_status=None, last_modified=None, legacy_id=None, location=None, race=None, school=None, schools=None, sis_id=None, state_id=None, student_number=None, unweighted_gpa=None, weighted_gpa=None, frl_status=None, email=None):  # noqa: E501
         """Student - a model defined in Swagger"""  # noqa: E501
         self._credentials = None
         self._dob = None
@@ -96,6 +100,8 @@ class Student(object):
         self._state_id = None
         self._student_number = None
         self.discriminator = None
+        self._frl_status = None
+        self._email = None
         if created is not None:
             self.created = created
         if credentials is not None:
@@ -142,6 +148,10 @@ class Student(object):
             self.unweighted_gpa = unweighted_gpa
         if weighted_gpa is not None:
             self.weighted_gpa = weighted_gpa
+        if frl_status is not None:
+            self.frl_status = frl_status
+        if email is not None:
+            self.email = email
 
 
 
@@ -600,6 +610,52 @@ class Student(object):
         """
 
         self._student_number = student_number
+
+
+    @property
+    def frl_status(self):
+        """Gets the frl_status of this Student.  # noqa: E501
+
+
+        :return: The frl_status of this Student.  # noqa: E501
+        :rtype: str
+        """
+        return self._frl_status
+
+    @frl_status.setter
+    def frl_status(self, frl_status):
+        """Sets the frl_status of this Student.
+
+
+        :param frl_status: The frl_status of this Student.  # noqa: E501
+        :type: str
+        """
+
+        self._frl_status = frl_status
+
+
+
+    @property
+    def email(self):
+        """Gets the email of this Student.  # noqa: E501
+
+
+        :return: The email of this Student.  # noqa: E501
+        :rtype: str
+        """
+        return self._email
+
+    @email.setter
+    def email(self, email):
+        """Sets the email of this Student.
+
+
+        :param email: The iep_status of this Student.  # noqa: E501
+        :type: str
+        """
+
+        self._email = email
+
 
     def to_dict(self):
         """Returns the model properties as a dict"""
