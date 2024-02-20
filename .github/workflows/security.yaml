@@ -1,12 +1,32 @@
-name: Run Snyk Security Check
-on: push
+name: Run Security Check
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+
 jobs:
-  security:
+  code_check:
+    name: Snyk - Code
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - name: Run Snyk to check for vulnerabilities
-        continue-on-error: ${{ vars.SNYK_CONTINUE_ON_ERROR == 'true' }}
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Snyk to check code for vulnerabilities
+        id: run
         uses: snyk/actions/python@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --severity-threshold=${{ vars.SNYK_SEVERITY_THRESHOLD }} --json-file-output=code.json
+
+      - uses: Branching-Minds/brm-gh-actions/common/snyk-code-report-format@main
+        if: ${{ !cancelled() }}
+        id: copy
+
+      - name: Comment on PR
+        if: ${{ !cancelled() }}
+        uses: Branching-Minds/brm-gh-actions/library/comment-pr@main
+        with:
+          comment: ${{ steps.copy.outputs.report }}
+          first_line: "## Snyk Code Vulnerability Report"
+          pull_request_number: ${{ github.event.pull_request.number }}
