@@ -219,7 +219,6 @@ class Student(object):
         allowed_values = ["Y", "N", ""]  # noqa: E501
         if ell_status not in allowed_values:
             warnings.warn(f"Invalid value for ell_status: '{ell_status}'. Must be one of {allowed_values}. Defaulting to None.")
-            ell_status = None
 
         self._ell_status = ell_status
 
