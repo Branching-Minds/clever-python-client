@@ -11,7 +11,8 @@
 """
 
 import pprint
-import re  # noqa: F401
+import re
+import warnings  # noqa: F401
 
 import six
 
@@ -217,10 +218,7 @@ class Student(object):
         """
         allowed_values = ["Y", "N", ""]  # noqa: E501
         if ell_status not in allowed_values:
-            raise ValueError(
-                "Invalid value for `ell_status` ({0}), must be one of {1}"  # noqa: E501
-                .format(ell_status, allowed_values)
-            )
+            warnings.warn(f"Invalid value for ell_status: '{ell_status}'. Must be one of {allowed_values}. Defaulting to None.")
 
         self._ell_status = ell_status
 
